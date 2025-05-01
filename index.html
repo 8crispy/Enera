@@ -2,14 +2,27 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Enera</title>
+  <title>ENERA - Soluciones Energéticas Sostenibles</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ENERA ofrece soluciones energéticas sostenibles para hogares y empresas. Energía renovable, eficiencia y ahorro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      color: #333;
+      line-height: 1.6;
     }
 
     header {
@@ -17,83 +30,420 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
-      border-bottom: 1px solid #eee;
+      padding: 15px 5%;
+      border-bottom: 1px solid #e2e8f0;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .logo {
       display: flex;
       align-items: center;
+      gap: 12px;
     }
 
     .logo img {
-      height: 30px;
-      margin-right: 10px;
+      height: 45px;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .logo strong {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2d3748;
+      background: linear-gradient(to right, #38a169, #48bb78);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     nav {
       display: flex;
-      gap: 15px;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
     }
 
-    nav button {
+    nav button, .social-btn {
       background: none;
       border: none;
-      font-weight: bold;
+      font-weight: 500;
       cursor: pointer;
-      padding: 10px;
-      border-bottom: 2px solid transparent;
+      padding: 10px 18px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      color: #4a5568;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    nav button:hover, .social-btn:hover {
+      background-color: #f0fff4;
+      color: #38a169;
+      transform: translateY(-2px);
     }
 
     nav button.active {
-      border-bottom: 2px solid green;
-      color: green;
+      background-color: #f0fff4;
+      color: #38a169;
+      box-shadow: 0 2px 8px rgba(56, 161, 105, 0.15);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+      margin-top: 20px;
+      margin-bottom: 50px;
     }
 
     .content {
-      padding: 30px;
       display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .content.active {
       display: block;
     }
 
+    h2 {
+      color: #1a202c;
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      border-left: 5px solid #38a169;
+      padding-left: 15px;
+      font-size: 1.8rem;
+      font-weight: 600;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(to right, #38a169, #48bb78);
+    }
+
+    p {
+      color: #4a5568;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .text-box {
+      background-color: #f8fafc;
+      border-left: 4px solid #38a169;
+      padding: 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 25px 0;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.03);
+    }
+
     .catalogo {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
     }
 
     .item {
       background: white;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      width: 250px;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+      padding: 25px;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      border-color: #c6f6d5;
     }
 
     .item img {
-      max-width: 100%;
-      height: auto;
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
       border-radius: 8px;
+      margin-bottom: 15px;
     }
 
-    .video-btn {
-      background-color: green;
+    .item h3 {
+      color: #2d3748;
+      margin: 15px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .item p {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #718096;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      background: linear-gradient(to right, #38a169, #48bb78);
       color: white;
       padding: 12px 25px;
       border: none;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: bold;
+      border-radius: 30px;
+      font-weight: 600;
       display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(56, 161, 105, 0.2);
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: linear-gradient(to right, #2f855a, #38a169);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(56, 161, 105, 0.3);
+    }
+
+    .btn i {
+      margin-right: 8px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin: 20px 0;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.02);
+    }
+
+    ul {
+      padding-left: 25px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      color: #4a5568;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    li::before {
+      content: '✓';
+      color: #38a169;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    li strong {
+      color: #2d3748;
+    }
+
+    .review {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      border-top: 3px solid #48bb78;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .review-header img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 15px;
+      box-shadow: none;
+    }
+
+    .review-author {
+      font-weight: 600;
+      color: #2d3748;
+    }
+
+    .review-date {
+      color: #718096;
+      font-size: 0.85rem;
+    }
+
+    .review-stars {
+      color: #f6ad55;
+      margin: 5px 0;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .contact-card {
+      background: #f8fafc;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .contact-card i {
+      font-size: 1.8rem;
+      color: #38a169;
+      margin-bottom: 15px;
+    }
+
+    .contact-card h3 {
+      color: #2d3748;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: #4a5568;
+      margin-bottom: 0;
+    }
+
+    .footer {
+      background-color: #2d3748;
+      color: white;
+      padding: 40px 5%;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      text-align: left;
+    }
+
+    .footer-column h3 {
+      color: #48bb78;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+
+    .footer-column p, .footer-column a {
+      color: #cbd5e0;
+      margin-bottom: 10px;
+      display: block;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: #48bb78;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
       margin-top: 20px;
     }
 
-    .video-btn:hover {
-      background-color: darkgreen;
+    .social-links a {
+      color: white;
+      background: #4a5568;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: #48bb78;
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #4a5568;
+      color: #a0aec0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .logo {
+        margin-bottom: 15px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .container {
+        padding: 25px 15px;
+        margin: 15px;
+      }
+
+      .catalogo {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      nav button {
+        width: 100%;
+        text-align: left;
+      }
+
+      .container {
+        padding: 20px 10px;
+      }
     }
   </style>
 </head>
@@ -101,163 +451,263 @@
 
 <header>
   <div class="logo">
-    <img src="eneralogofinal.png" alt="Logo" style="height: 40px; border-radius: 8px;">
-
+    <img src="eneralogofinal.png" alt="Logo ENERA">
     <strong>ENERA</strong>
   </div>
   <nav>
-    <button class="active" onclick="showTab('quienes')">Quiénes Somos</button>
-	<button onclick="showTab('objetivos')">Objetivos</button>
-	<button onclick="showTab('catalogo')">Catálogo</button>
-    <button onclick="showTab('resenas')">Reseñas</button>
-    <button onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')">Video</button>
-	<button onclick="showTab('contacto')">Contacto</button>
-	<button onclick="window.open('https://www.instagram.com/enera.adh/', '_blank')">Instagram</button>
+    <button class="active" onclick="showTab('quienes')"><i class="fas fa-users"></i> Quiénes Somos</button>
+    <button onclick="showTab('objetivos')"><i class="fas fa-bullseye"></i> Objetivos</button>
+    <button onclick="showTab('catalogo')"><i class="fas fa-solar-panel"></i> Catálogo</button>
+    <button onclick="showTab('resenas')"><i class="fas fa-star"></i> Reseñas</button>
+    <button class="social-btn" onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')"><i class="fab fa-youtube"></i> Video</button>
+    <button onclick="showTab('contacto')"><i class="fas fa-envelope"></i> Contacto</button>
+    <button class="social-btn" onclick="window.open('https://www.instagram.com/enera.adh/')"><i class="fab fa-instagram"></i> Instagram</button>
   </nav>
 </header>
 
-<div id="quienes" class="content active">
-  <h2>Quiénes Somos</h2>
-  <p>En ENERA, creemos firmemente que el cambio comienza en casa. Somos cinco estudiantes con una visión clara y un compromiso compartido: contribuir a un mundo más limpio, más eficiente y menos caro a través de nuestras instalaciones energéticas sostenibles.
-
-<br>La idea nació entre aulas, proyectos y conversaciones sobre el futuro que queremos vivir. Detectamos una necesidad urgente: transformar los hogares tradicionales en espacios más inteligentes y respetuosos con el medio ambiente. Así surgió ENERA, una empresa joven que se dedica a la instalación de sistemas ecosostenibles, como paneles solares, acumuladores de energía y tecnologías que optimizan el consumo eléctrico.
-
-Nuestra misión es hacer la energía algo barato y viable para todos, guiando a las personas en la transición hacia viviendas más eficientes, autónomas y conectadas con el entorno. Aportamos innovación, cercanía y responsabilidad en cada instalación, entendiendo que cada hogar es único y cada cliente, una oportunidad para generar impacto positivo en nuestro planeta y en nuestra comunidad.
-
-Detrás de ENERA hay un equipo comprometido y multidisciplinario, formado por los miembros fundadores y varios tecnicos y profesionales de la instalacion. Los socios fundadores somos:<br>
-
-
-
-<br>Jaime- Con gran ambicion y motivaciones, tomó las riendas en el proyecto e impulsó su perfeccionismo en la empresa.<br>
-<br>Martín- Con conocimientos informatico-tecnicos, se encarga de los aspectos online de la empresa, ademas de llevar al dia la organización. <br>
-<br>Silvia– Con muchas ganas de participar, lleva todos los numeros y cuentas de ENERA, ademas de encontrarse como secretaria en la oficina.<br>
-<br>Jimena– Con infinidad de horas en sistemas online, es la encargada de hablar con los proveedores y de estar al dia con las nuevas tecnologías. <br>
-<br>Ana– Con un gran carisma, tiene controlados a todos los clientes y sus necesidades, ademas de llevar la contratación de técnicos y empleados.<br>
-
-
-
-
-
-
-
-<br>Además de compartir el mismo campo de estudio, compartimos un propósito: hacer que la energía limpia sea parte de la vida cotidiana, ya que el futuro somos nosotros y es hora de cambiarlo<br>
-
-<br>Somos ENERA: una nueva generación construyendo un futuro energético más inteligente, más barato y más verde.<br></p>
-  
-<br>  <img src="enerita.jpg" alt="Nosotrosouyea" style="height: 450px; border-radius: 8px;"> </br>
-</div>
-
-<div id="resenas" class="content">
-  <h2>Reseñas</h2>
-  <div class="item">
-      <img src="https://images.ctfassets.net/hrltx12pl8hq/3AnnkVqrlhrqb9hjlMBzKX/693a8e5d40b4b6c55a7673ca4c807eef/Girl-Stock" alt="Laura">
-      <h3>Laura D.</h3>
-      <p>Un ahorro que se nota, recomiendo 100%  ✩ ✩ ✩ ✩ ✩</p>
+<div class="container">
+  <div id="quienes" class="content active">
+    <h2>Quiénes Somos</h2>
+    <div class="text-box">
+      <p>En ENERA, creemos firmemente que el cambio comienza en casa. Somos una empresa comprometida con la transición energética, ofreciendo soluciones sostenibles y personalizadas para hogares y empresas que buscan reducir su impacto ambiental mientras ahorran en sus facturas de energía.</p>
     </div>
-    <div class="item">
-      <img src="https://images.ctfassets.net/hrltx12pl8hq/3Mz6t2p2yHYqZcIM0ic9E2/3b7037fe8871187415500fb9202608f7/Man-Stock-Photos.jpg" alt="Pico">
-      <h3>Sergio P.</h3>
-      <p>Ecosostenibilidad pura y dura, ademas gracias a los paneles pago menos impuestos jeje  ✩ ✩ ✩ ✩ ✩</p>
-    </div>
-    <div class="item">
-      <img src="https://st2.depositphotos.com/1499736/7422/i/450/depositphotos_74221929-stock-photo-businessmen-showing-ok-sign.jpg" alt="Alvarito">
-      <h3>Alvaro C.</h3>
-      <p>Rapidos y eficientes, ya no se me ira la luz con el futbol. Lo unico malo que el acumulador ocupa un gran espacio en mi cocina  ✩ ✩ ✩</p>
-    </div>
-	<div class="item">
-      <img src="https://media.istockphoto.com/id/850915328/es/foto/madre-e-hijo.jpg?s=612x612&w=0&k=20&c=ayDtA1dUQYaC_Iy6yQfU1iZFtxN0JdjPLPUoPAbGxfo=" alt="Helen">
-      <h3>Helena C.</h3>
-      <p>Muy contenta con la turbina, los tecnicos fueron majos y rapidos, me senti acompañada durante todo el proceso  ✩ ✩ ✩ ✩</p>
-    </div>
-</div>
+    <p>Nuestro equipo está formado por expertos en energías renovables, eficiencia energética y sostenibilidad, todos unidos por la pasión de crear un futuro más limpio y autosuficiente. Trabajamos día a día para democratizar el acceso a tecnologías limpias, haciendo que la energía sostenible sea accesible para todos.</p>
+    <img src="enerita.jpg" alt="Equipo ENERA" loading="lazy">
+  </div>
 
-<div id="catalogo" class="content">
-  <h2>Catálogo de Servicios</h2>
-  <div class="catalogo">
-    <div class="item">
-      <img src="https://preview.free3d.com/img/2013/04/2154828052368983497/rpndacgl.jpg" alt="Solar">
-      <h3>LUZ</h3>
-      <p>Paneles solares de alta eficiencia para hogares.</p>
+  <div id="objetivos" class="content">
+    <h2>Nuestros Objetivos</h2>
+    <ul>
+      <li><strong>Contribuir a la protección del medioambiente</strong>: Reducimos la huella ecológica promoviendo energías limpias y soluciones sostenibles que minimicen el impacto en nuestro planeta.</li>
+      <li><strong>Reducir las facturas energéticas</strong>: Nuestros sistemas altamente eficientes están diseñados para ofrecer el máximo ahorro, haciendo que la inversión en sostenibilidad sea también rentable económicamente.</li>
+      <li><strong>Fomentar la autosuficiencia energética</strong>: Enseñamos a los hogares y empresas a generar, gestionar y optimizar su propia energía, reduciendo la dependencia de la red convencional.</li>
+      <li><strong>Democratizar el acceso a energías limpias</strong>: Desarrollamos soluciones ecológicas adaptadas a diferentes presupuestos, porque creemos que la sostenibilidad debe estar al alcance de todos.</li>
+      <li><strong>Promover la conciencia ambiental</strong>: La educación y comunicación son ejes fundamentales de nuestro trabajo, porque el cambio real comienza con la información y la concienciación.</li>
+      <li><strong>Innovación constante</strong>: Mantenemos nuestra tecnología a la vanguardia, incorporando continuamente las últimas innovaciones en eficiencia y generación energética.</li>
+      <li><strong>Construir relaciones de confianza</strong>: Ofrecemos una atención cercana, transparente y personalizada, porque creemos en relaciones a largo plazo basadas en la honestidad y los resultados.</li>
+    </ul>
+    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Energía sostenible" loading="lazy">
+  </div>
+
+  <div id="catalogo" class="content">
+    <h2>Catálogo de Servicios</h2>
+    <p>Descubre nuestras soluciones energéticas diseñadas para adaptarse a tus necesidades específicas:</p>
+    
+    <div class="catalogo">
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Paneles solares" loading="lazy">
+        <h3>Instalación Solar Fotovoltaica</h3>
+        <p>Sistemas completos para autoconsumo con garantía de 25 años. Maximiza tu ahorro con nuestra tecnología de última generación.</p>
+        <a href="#" class="btn"><i class="fas fa-info-circle"></i> Más información</a>
+      </div>
+      
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Termostato inteligente" loading="lazy">
+        <h3>Domótica y Eficiencia</h3>
+        <p>Soluciones inteligentes para optimizar tu consumo: termostatos, iluminación LED y sistemas de gestión energética.</p>
+        <a href="#" class="btn"><i class="fas fa-info-circle"></i> Más información</a>
+      </div>
+      
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Aerotermia" loading="lazy">
+        <h3>Sistemas de Aerotermia</h3>
+        <p>Climatización eficiente que aprovecha la energía del aire para calefacción, refrigeración y agua caliente sanitaria.</p>
+        <a href="#" class="btn"><i class="fas fa-info-circle"></i> Más información</a>
+      </div>
+      
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Auditoría energética" loading="lazy">
+        <h3>Auditorías Energéticas</h3>
+        <p>Análisis completo de tu consumo con recomendaciones personalizadas para optimizar tu eficiencia energética.</p>
+        <a href="#" class="btn"><i class="fas fa-info-circle"></i> Más información</a>
+      </div>
     </div>
-    <div class="item">
-      <img src="https://images.cults3d.com/yd-Tu9yigs9O2nS3kmPf4tJ2L2w=/246x246/filters:no_upscale()/https://fbi.cults3d.com/uploaders/14872116/illustration-file/affc0e2e-f6b4-430c-a144-3bf95e1e04f4/8b585170-424f-4a55-9d39-3e4b360a04e5.png" alt="Eólica">
-      <h3>AIRE</h3>
-      <p>Turbinas eólicas de pequeña escala.</p>
+  </div>
+
+  <div id="resenas" class="content">
+    <h2>Reseñas de Clientes</h2>
+    <p>Esto es lo que dicen nuestros clientes sobre nuestros servicios:</p>
+    
+    <div class="review">
+      <div class="review-header">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente satisfecho" loading="lazy">
+        <div>
+          <div class="review-author">María González</div>
+          <div class="review-date">15 Enero 2023</div>
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+      <p>"La instalación de paneles solares con ENERA ha sido una de las mejores decisiones que hemos tomado. En solo 8 meses hemos reducido nuestra factura eléctrica en un 70%. El equipo fue profesional, limpio y resolvieron todas nuestras dudas. ¡Altamente recomendables!"</p>
     </div>
-    <div class="item">
-      <img src="https://pelletkachellemmer.nl/wp-content/uploads/2024/06/Sanit-HE-DS.png" alt="Hidro">
-      <h3>BOMBA DE CALOR</h3>
-      <p>Sistemas de acumulacion para solucionar problemas térmicos.</p>
+    
+    <div class="review">
+      <div class="review-header">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente satisfecho" loading="lazy">
+        <div>
+          <div class="review-author">Javier Martínez</div>
+          <div class="review-date">3 Marzo 2023</div>
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
+      <p>"Contraté la auditoría energética para mi negocio y los resultados fueron reveladores. Las recomendaciones de ENERA nos han permitido ahorrar un 35% en energía sin afectar nuestra producción. Estamos planeando implementar más de sus sugerencias este año."</p>
     </div>
-	<div class="item">
-      <img src="https://biblus.accasoftware.com/es/wp-content/uploads/sites/3/2021/03/Edificius-MEP_tablas-graficas.jpg.webp" alt="Stm">
-      <h3>GEOTERMIA</h3>
-      <p>Mejora de la distribucion del calor del subsuelo y lo aprovecha.</p>
+    
+    <div class="review">
+      <div class="review-header">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente satisfecho" loading="lazy">
+        <div>
+          <div class="review-author">Laura Jiménez</div>
+          <div class="review-date">22 Noviembre 2022</div>
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+      <p>"El sistema de aerotermia que instalaron en mi casa ha superado todas mis expectativas. No solo es más eficiente que la caldera que tenía antes, sino que el aire acondicionado integrado funciona perfectamente en verano. El equipo de instalación fue puntual, limpio y muy profesional."</p>
     </div>
-	<div class="item">
-      <img src="https://preview.free3d.com/img/2013/04/2154828052368983497/rpndacgl.jpg" alt="Solar">
-      <h3>AGUA</h3>
-      <p>Pequeños generadores que aprovechan el movimiento de masas de agua cercanas.</p>
+  </div>
+
+  <div id="contacto" class="content">
+    <h2>Contacto</h2>
+    <p>Estamos aquí para ayudarte en tu transición energética. Contáctanos por cualquier consulta o para solicitar un presupuesto personalizado.</p>
+    
+    <div class="contact-info">
+      <div class="contact-card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Dirección</h3>
+        <p>Calle Argentina 17, Alcalá de Henares (nave 3)</p>
+        <a href="#" class="btn" style="margin-top: 15px;"><i class="fas fa-directions"></i> Cómo llegar</a>
+      </div>
+      
+      <div class="contact-card">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Teléfono</h3>
+        <p>662 666 077</p>
+        <a href="tel:662666077" class="btn" style="margin-top: 15px;"><i class="fas fa-phone"></i> Llamar ahora</a>
+      </div>
+      
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>info@enera.com</p>
+        <a href="mailto:info@enera.com" class="btn" style="margin-top: 15px;"><i class="fas fa-paper-plane"></i> Enviar email</a>
+      </div>
+      
+      <div class="contact-card">
+        <i class="fas fa-clock"></i>
+        <h3>Horario</h3>
+        <p>Lunes a Viernes: 9:00 - 18:00</p>
+        <p>Sábados: 10:00 - 14:00</p>
+      </div>
     </div>
-    <div class="item">
-      <img src="https://aquaenergy.es/wp-content/uploads/2022/08/deposito_aguas_pluviales_Kit_2_filtro_fci-1.png" alt="Aguilla">
-      <h3>ACUMULACION</h3>
-      <p>Aparatos que recogen, filtran y almacenan el agua de la lluvia y de la condensación del aire.</p>
-    </div>
+    
+    <img src="nave.png" alt="Nave ENERA" loading="lazy" style="margin-top: 30px;">
   </div>
 </div>
 
-<div id="objetivos" class="content">
-  <h2>Nuestros Objetivos</h2>
-  <ul>
-<br> <br><h3>Contribuir a la protección del medioambiente</h3><br>
-En ENERA, uno de nuestros principales objetivos es reducir la huella ecológica de los hogares. Promovemos el uso de energías limpias y renovables para disminuir la dependencia de combustibles fósiles, ayudando a combatir el cambio climático desde lo cotidiano. Cada sistema instalado es una contribución directa a la salud del planeta.<br/>
-<br>
-<br><h3>Reducir las facturas de nuestros clientes</h3><br>
-Creemos que la sostenibilidad también debe ser accesible y económicamente beneficiosa. Por eso, diseñamos soluciones que no solo son eficientes, sino también rentables. Nuestros clientes experimentan un ahorro real y constante en sus facturas eléctricas, transformando una inversión inicial en un beneficio a largo plazo.
-<br><br>
-<br><h3>Fomentar la autosuficiencia energética en los hogares</h3><br>
-Buscamos enseñar a las personas en que pueden producir y gestionar su propia energía. Esto no solo reduce la dependencia de las compañías eléctricas, sino que también fortalece la resiliencia energética frente a apagones o subidas de precios en la red eléctrica.
-<br><br>
-<br><h3>Democratizar el acceso a tecnologías ecosostenibles</h3><br>
-Nuestro objetivo es que más hogares, sin importar su tamaño o ubicación, puedan acceder a soluciones ecológicas. Por eso, adaptamos cada proyecto a las necesidades específicas del cliente, buscando siempre alternativas viables y eficientes.
-<br><br>
-<br><h3>Crear conciencia ambiental a través de la educación y la comunicación</h3><br>
-Más allá de instalar tecnología, queremos generar un cambio cultural. Informamos, asesoramos y acompañamos a nuestros clientes para que comprendan el impacto positivo de adoptar hábitos sostenibles. Creemos que educar es una forma de ampliar nuestro impacto más allá de cada instalación.
-<br><br>
-<br><h3>Impulsar la innovación constante en soluciones sostenibles</h3><br>
-Nos mantenemos en la búsqueda continua de nuevas tecnologías y métodos para mejorar la eficiencia energética. Siempre buscamos las nuevas alternativas mas viables tanto ecologicamente como de rentabilidad, nuestro compromiso es estar siempre a la vanguardia para ofrecer lo mejor al mejor precio.
-<br><br>
-<br><h3>Construir relaciones de confianza con nuestros clientes</h3><br>
-Nuestro trabajo se basa en la transparencia, la honestidad y la cercanía. Queremos que cada persona que confía en ENERA sienta que forma parte de una comunidad comprometida con el futuro del planeta. Por eso, ofrecemos acompañamiento técnico, atención personalizada y seguimiento a largo plazo, lo que hacen que para cliente la experiencia de ENERA sea unica.<br>
-  </ul>
-</div>
-
-<div id="contacto" class="content">
-  <h2>Nuestro Contacto</h2>
-  <ul>
-<br>
-<h4>Nos encontramos situados en</h4> <h3>Calle Argentina 17, Alcalá de Henares (nave 3)</h3>
- <img src="nave.png" alt="Nave" style= "border-radius: 8px;">
-<br> <h3>y nuestro tlf de contacto es</h3> <h3>662666077123</h3>  <br/>
-<br/>
-
-  </ul>
-</div>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>ENERA</h3>
+      <p>Soluciones energéticas sostenibles para hogares y empresas. Comprometidos con el medio ambiente y tu ahorro.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/enera.adh/"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    
+    <div class="footer-column">
+      <h3>Enlaces rápidos</h3>
+      <a href="#" onclick="showTab('quienes')">Quiénes somos</a>
+      <a href="#" onclick="showTab('objetivos')">Nuestros objetivos</a>
+      <a href="#" onclick="showTab('catalogo')">Catálogo de servicios</a>
+      <a href="#" onclick="showTab('resenas')">Reseñas</a>
+      <a href="#" onclick="showTab('contacto')">Contacto</a>
+    </div>
+    
+    <div class="footer-column">
+      <h3>Servicios</h3>
+      <a href="#">Energía solar</a>
+      <a href="#">Aerotermia</a>
+      <a href="#">Domótica</a>
+      <a href="#">Auditorías energéticas</a>
+      <a href="#">Asesoramiento personalizado</a>
+    </div>
+    
+    <div class="footer-column">
+      <h3>Legal</h3>
+      <a href="#">Política de privacidad</a>
+      <a href="#">Términos y condiciones</a>
+      <a href="#">Aviso legal</a>
+      <a href="#">Política de cookies</a>
+    </div>
+  </div>
+  
+  <div class="copyright">
+    <p>&copy; 2023 ENERA. Todos los derechos reservados.</p>
+  </div>
+</footer>
 
 <script>
   function showTab(id) {
     const tabs = document.querySelectorAll('.content');
     const buttons = document.querySelectorAll('nav button');
-
-    tabs.forEach(tab => tab.classList.remove('active'));
+    
+    // Ocultar todos los contenidos
+    tabs.forEach(tab => {
+      tab.classList.remove('active');
+      tab.style.opacity = 0;
+    });
+    
+    // Quitar clase active de todos los botones
     buttons.forEach(btn => btn.classList.remove('active'));
-
-    document.getElementById(id).classList.add('active');
+    
+    // Mostrar el contenido seleccionado con animación
+    const selectedTab = document.getElementById(id);
+    selectedTab.classList.add('active');
+    setTimeout(() => {
+      selectedTab.style.opacity = 1;
+    }, 10);
+    
+    // Añadir clase active al botón clickeado
     event.target.classList.add('active');
+    
+    // Desplazamiento suave al principio del contenido
+    window.scrollTo({
+      top: document.querySelector('.container').offsetTop - 20,
+      behavior: 'smooth'
+    });
   }
+  
+  // Cargar imágenes de forma diferida
+  document.addEventListener("DOMContentLoaded", function() {
+    const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+    
+    if ("IntersectionObserver" in window) {
+      let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            let lazyImage = entry.target;
+            lazyImage.src = lazyImage.dataset.src;
+            lazyImage.classList.remove("lazy");
+            lazyImageObserver.unobserve(lazyImage);
+          }
+        });
+      });
+      
+      lazyImages.forEach(function(lazyImage) {
+        lazyImageObserver.observe(lazyImage);
+      });
+    }
+  });
 </script>
 
 </body>
 </html>
-
