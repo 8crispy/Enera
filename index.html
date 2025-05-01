@@ -229,6 +229,18 @@
       margin-right: 8px;
     }
 
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #38a169;
+      color: #38a169;
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: #38a169;
+      color: white;
+    }
+
     img {
       max-width: 100%;
       height: auto;
@@ -338,6 +350,11 @@
     .contact-card p {
       color: #4a5568;
       margin-bottom: 0;
+    }
+
+    .add-review {
+      text-align: center;
+      margin: 40px 0;
     }
 
     .footer {
@@ -490,37 +507,72 @@
   </div>
 
   <div id="catalogo" class="content">
-    <h2>Catálogo de Servicios</h2>
-    <p>Descubre nuestras soluciones energéticas diseñadas para adaptarse a tus necesidades específicas:</p>
+    <h2>Nuestros Productos y Servicios</h2>
+    <div class="text-box">
+      <p>En ENERA elaboramos un estudio completo del hogar e instalamos equipos que permitan generar energía de manera autosuficiente. Seleccionamos los mejores proveedores en cuanto a calidad-precio y nos aseguramos de que la energía recogida se use de manera eficiente.</p>
+      <p>Ofrecemos total transparencia durante todo el proceso, explicando detalladamente cada decisión técnica, el funcionamiento de los sistemas y el proceso de instalación. Además, proporcionamos nuestro software inteligente que integra todos los sistemas en una única aplicación para monitorizar y controlar el consumo en tiempo real.</p>
+    </div>
     
     <div class="catalogo">
       <div class="item">
         <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Paneles solares" loading="lazy">
-        <h3>Instalación Solar Fotovoltaica</h3>
-        <p>Sistemas completos para autoconsumo con garantía de 25 años. Maximiza tu ahorro con nuestra tecnología de última generación.</p>
+        <h3>Paneles Solares Fotovoltaicos</h3>
+        <p>Generan electricidad mediante radiación solar a través de células de silicio (efecto fotoeléctrico). La corriente continua se transforma con un inversor. La potencia instalada depende de la irradiación solar directa, inclinación y sombreado.</p>
         <a href="#" class="btn"><i class="fas fa-info-circle"></i> Más información</a>
       </div>
       
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Termostato inteligente" loading="lazy">
-        <h3>Domótica y Eficiencia</h3>
-        <p>Soluciones inteligentes para optimizar tu consumo: termostatos, iluminación LED y sistemas de gestión energética.</p>
+        <img src="https://images.unsplash.com/photo-1580015915217-697d9b4075a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Microturbinas eólicas" loading="lazy">
+        <h3>Microturbinas Eólicas</h3>
+        <p>Transforman la energía cinética del viento en electricidad mediante generadores eólicos (eje horizontal o vertical). Potencias de 1 a 50 kW, requieren velocidades mínimas de viento de 3-4 m/s.</p>
         <a href="#" class="btn"><i class="fas fa-info-circle"></i> Más información</a>
       </div>
       
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Aerotermia" loading="lazy">
-        <h3>Sistemas de Aerotermia</h3>
-        <p>Climatización eficiente que aprovecha la energía del aire para calefacción, refrigeración y agua caliente sanitaria.</p>
+        <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Bombas de calor" loading="lazy">
+        <h3>Sistemas de Bombas de Calor</h3>
+        <p>Extraen energía térmica mediante compresión, condensación, expansión y evaporación de un refrigerante para usarse en calefacción, suelos radiantes, refrigeración y agua caliente sanitaria.</p>
         <a href="#" class="btn"><i class="fas fa-info-circle"></i> Más información</a>
       </div>
       
       <div class="item">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Auditoría energética" loading="lazy">
-        <h3>Auditorías Energéticas</h3>
-        <p>Análisis completo de tu consumo con recomendaciones personalizadas para optimizar tu eficiencia energética.</p>
+        <img src="https://images.unsplash.com/photo-1611345152169-0d91b143607e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Aerotermia" loading="lazy">
+        <h3>Aerotermia</h3>
+        <p>Mediante una bomba de calor aire-agua o aire-aire, extrae energía térmica del aire exterior. Funciona eficientemente incluso a bajas temperaturas ambientales.</p>
         <a href="#" class="btn"><i class="fas fa-info-circle"></i> Más información</a>
       </div>
+      
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Geotermia" loading="lazy">
+        <h3>Geotermia</h3>
+        <p>Intercambia calor con el subsuelo (temperatura estable a 10-15°C). Requiere estudios geológicos para determinar la conductividad térmica del terreno y la longitud necesaria de las sondas.</p>
+        <a href="#" class="btn"><i class="fas fa-info-circle"></i> Más información</a>
+      </div>
+      
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1605980776566-0486c3ac7617?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Placas térmicas" loading="lazy">
+        <h3>Placas Térmicas Solares</h3>
+        <p>Absorben la radiación solar a través de colectores solares térmicos para producción de agua caliente sanitaria y apoyo a sistemas de calefacción.</p>
+        <a href="#" class="btn"><i class="fas fa-info-circle"></i> Más información</a>
+      </div>
+      
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Captación agua lluvia" loading="lazy">
+        <h3>Captación de Agua de Lluvia</h3>
+        <p>Almacena agua de lluvia en depósitos (enterrados o superficiales) para reutilización en riego, limpieza y usos no potables. Incluye tratamiento con UV o cloración. Reduce hasta 50% el consumo de agua de red.</p>
+        <a href="#" class="btn"><i class="fas fa-info-circle"></i> Más información</a>
+      </div>
+      
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Energía hidráulica" loading="lazy">
+        <h3>Energía Hidráulica</h3>
+        <p>Convierte la energía mecánica de corrientes de agua en electricidad mediante turbinas conectadas a generadores. Requiere estudios hidrológicos y permisos ambientales según el caso.</p>
+        <a href="#" class="btn"><i class="fas fa-info-circle"></i> Más información</a>
+      </div>
+    </div>
+    
+    <div class="text-box" style="margin-top: 40px;">
+      <p><strong>Nota:</strong> Los precios, materiales, dimensiones y especificaciones técnicas varían según las necesidades del cliente, disponibilidad de proveedores y normativas locales y nacionales. Contacta con nosotros para un estudio personalizado sin compromiso.</p>
     </div>
   </div>
 
@@ -533,7 +585,7 @@
         <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente satisfecho" loading="lazy">
         <div>
           <div class="review-author">María González</div>
-          <div class="review-date">15 Enero 2023</div>
+          <div class="review-date">15 Enero 2025</div>
           <div class="review-stars">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
@@ -547,7 +599,7 @@
         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente satisfecho" loading="lazy">
         <div>
           <div class="review-author">Javier Martínez</div>
-          <div class="review-date">3 Marzo 2023</div>
+          <div class="review-date">3 Marzo 2025</div>
           <div class="review-stars">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
           </div>
@@ -561,13 +613,19 @@
         <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente satisfecho" loading="lazy">
         <div>
           <div class="review-author">Laura Jiménez</div>
-          <div class="review-date">22 Noviembre 2022</div>
+          <div class="review-date">22 Noviembre 2024</div>
           <div class="review-stars">
             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
         </div>
       </div>
       <p>"El sistema de aerotermia que instalaron en mi casa ha superado todas mis expectativas. No solo es más eficiente que la caldera que tenía antes, sino que el aire acondicionado integrado funciona perfectamente en verano. El equipo de instalación fue puntual, limpio y muy profesional."</p>
+    </div>
+    
+    <div class="add-review">
+      <button class="btn btn-outline" onclick="alert('Gracias por tu interés en dejar una reseña. Por favor, envía tu opinión a info@enera.com o a través de nuestro formulario de contacto.')">
+        <i class="fas fa-plus-circle"></i> Añadir Mi Reseña
+      </button>
     </div>
   </div>
 
@@ -586,8 +644,8 @@
       <div class="contact-card">
         <i class="fas fa-phone-alt"></i>
         <h3>Teléfono</h3>
-        <p>662 666 077</p>
-        <a href="tel:662666077" class="btn" style="margin-top: 15px;"><i class="fas fa-phone"></i> Llamar ahora</a>
+        <p>+34 912 345 678</p>
+        <a href="tel:+34912345678" class="btn" style="margin-top: 15px;"><i class="fas fa-phone"></i> Llamar ahora</a>
       </div>
       
       <div class="contact-card">
@@ -636,9 +694,9 @@
       <h3>Servicios</h3>
       <a href="#">Energía solar</a>
       <a href="#">Aerotermia</a>
-      <a href="#">Domótica</a>
-      <a href="#">Auditorías energéticas</a>
-      <a href="#">Asesoramiento personalizado</a>
+      <a href="#">Geotermia</a>
+      <a href="#">Microturbinas eólicas</a>
+      <a href="#">Captación de agua de lluvia</a>
     </div>
     
     <div class="footer-column">
@@ -651,7 +709,7 @@
   </div>
   
   <div class="copyright">
-    <p>&copy; 2023 ENERA. Todos los derechos reservados.</p>
+    <p>&copy; 2025 ENERA. Todos los derechos reservados.</p>
   </div>
 </footer>
 
